@@ -15,7 +15,7 @@ class ListStuForMentor extends Component {
     }
     // To get all mentor list and update state
     getMentorDetails = async() => {
-        const {data} = await axios.get("https://student-mentor-task.herokuapp.com/list/mentor")
+        const {data} = await axios.get("https://studentmentortask.herokuapp.com/list/mentor")
         console.log(data);
         this.setState({MentorList: data});
     }
@@ -28,7 +28,7 @@ class ListStuForMentor extends Component {
         const {MID} = this.state;
         console.log(MID);
         // To get the student list for mentor
-        const {data} = await axios.post("https://student-mentor-task.herokuapp.com/list/studentsformentor", {MID});
+        const {data} = await axios.post("https://studentmentortask.herokuapp.com/list/studentsformentor", {MID});
         console.log(data);
         this.setState({StudentList: data});
     }

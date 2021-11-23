@@ -24,13 +24,13 @@ class CreateStudent extends Component {
         if (this.state.StudentName && this.state.StudentMail && this.state.MID) {
             const {StudentName, StudentMail, MID} = this.state;
             
-            await axios.post("https://student-mentor-task.herokuapp.com/create/student", {StudentName, StudentMail, MID});
+            await axios.post("https://studentmentortask.herokuapp.com/create/student", {StudentName, StudentMail, MID});
             alert("Student Added Successfully")
         } 
         // To create a new student without Mentor
         else if (this.state.StudentName && this.state.StudentMail) {
             const {StudentName, StudentMail} = this.state;
-            await axios.post("https://student-mentor-task.herokuapp.com/create/student", {StudentName, StudentMail});
+            await axios.post("https://studentmentortask.herokuapp.com/create/student", {StudentName, StudentMail});
             alert("Student Added Successfully")
         } else {
             const error = "Enter All Details";
@@ -39,7 +39,7 @@ class CreateStudent extends Component {
     }
 
     getMentorDetails = async() => {
-        const {data} = await axios.get("https://student-mentor-task.herokuapp.com/list/mentor")
+        const {data} = await axios.get("https://studentmentortask.herokuapp.com/list/mentor")
         console.log(data);
         this.setState({MentorList: data});
     };

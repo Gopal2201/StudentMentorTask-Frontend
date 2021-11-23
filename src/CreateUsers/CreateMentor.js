@@ -22,7 +22,7 @@ class CreateMentor extends Component {
         if (this.state.MentorName && this.state.MentorMail) {
             const {MentorName, MentorMail} = this.state;
             //API Call
-            await axios.post("https://student-mentor-task.herokuapp.com/create/mentor", {MentorName, MentorMail});
+            await axios.post("https://studentmentortask.herokuapp.com/create/mentor", {MentorName, MentorMail});
             alert("Mentor Created Successfully")
         } else {
             const error = "Enter All Details";

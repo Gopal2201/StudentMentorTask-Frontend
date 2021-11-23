@@ -15,8 +15,8 @@ class AssignMentor extends Component {
     }
 
     getMentorStuDetails = async() => {
-        const {data} = await axios.get("https://student-mentor-task.herokuapp.com/list/mentor")
-        const stuData = await axios.get("https://student-mentor-task.herokuapp.com/list/getallstudents")
+        const {data} = await axios.get("https://studentmentortask.herokuapp.com/list/mentor")
+        const stuData = await axios.get("https://studentmentortask.herokuapp.com/list/getallstudents")
         this.setState({MentorList: data, StudentList:stuData.data});
     }
 
@@ -26,7 +26,7 @@ class AssignMentor extends Component {
 
     handleSubmit = async () => {
         const {MID, SID} = this.state;
-        await axios.patch(`https://student-mentor-task.herokuapp.com/update/mentor/${SID}`, {MID});
+        await axios.patch(`https://studentmentortask.herokuapp.com/update/mentor/${SID}`, {MID});
         alert("Mentor Assigned Successfully");
     }
 

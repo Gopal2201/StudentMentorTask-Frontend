@@ -16,10 +16,10 @@ class multipleStudentAssign extends Component {
 
     getMentorDetails = async() => {
         // to get the list of all mentors
-        const {data} = await axios.get("https://student-mentor-task.herokuapp.com/list/mentor")
+        const {data} = await axios.get("https://studentmentortask.herokuapp.com/list/mentor")
         console.log(data);
         // To get the list of students with no mentors assigned
-        const response = await axios.get("https://student-mentor-task.herokuapp.com/list/nomentorstudents")
+        const response = await axios.get("https://studentmentortask.herokuapp.com/list/nomentorstudents")
         console.log(response);
         this.setState({MentorList: data, StudentList: response.data});
     }
@@ -46,7 +46,7 @@ class multipleStudentAssign extends Component {
         if (this.state.SelectedStu.length !== 0 && this.state.id)
         {
             const {id, SelectedStu} = this.state;
-            await axios.post("https://student-mentor-task.herokuapp.com/list/updatenomentorstudents", {id, SelectedStu});
+            await axios.post("https://studentmentortask.herokuapp.com/list/updatenomentorstudents", {id, SelectedStu});
             alert("Mentor Assigned Successfully")
             window.location.reload();
         } else {
